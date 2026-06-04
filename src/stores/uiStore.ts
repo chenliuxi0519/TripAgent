@@ -25,7 +25,7 @@ export const useUiStore = create<UiState>()(
       selectedTripId: null,
       darkMode: false,
       settingsOpen: false,
-      language: "zh",
+      language: "en",
 
       toggleSidebar: () => set((state) => ({ sidebarOpen: !state.sidebarOpen })),
 

@@ -10,6 +10,7 @@ import {
   type ServerTripMeta,
 } from "@/services/backendApi"
 import { toast } from "sonner"
+import { t } from "@/i18n"
 
 interface TripState {
   currentTrip: Trip | null
@@ -118,7 +119,7 @@ export const useTripStore = create<TripState>((set, get) => ({
       }
       set({ trips: metadata, isLoading: false, initialized: true })
     } catch (error) {
-      const message = error instanceof Error ? error.message : "加载行程失败"
+      const message = error instanceof Error ? error.message : t("toast.loadFailed")
       set({ isLoading: false, error: message, initialized: true })
       if (import.meta.env.DEV) {
         console.warn("[tripStore] Failed to load trips from storage:", message)
@@ -135,7 +136,7 @@ export const useTripStore = create<TripState>((set, get) => ({
       set({ currentTrip: trip ?? null, isLoading: false })
       return trip
     } catch (error) {
-      const message = error instanceof Error ? error.message : "加载行程失败"
+      const message = error instanceof Error ? error.message : t("toast.loadFailed")
       set({ isLoading: false, error: message })
       if (import.meta.env.DEV) {
         console.warn("[tripStore] Failed to load trip:", message)
@@ -160,9 +161,9 @@ export const useTripStore = create<TripState>((set, get) => ({
         ],
         currentTrip: trip,
       }))
-      toast.success("行程已保存")
+      toast.success(t("toast.tripSaved"))
     } catch (error) {
-      const message = error instanceof Error ? error.message : "保存行程失败"
+      const message = error instanceof Error ? error.message : t("toast.saveFailed")
       toast.error(message)
     }
   },
@@ -178,9 +179,9 @@ export const useTripStore = create<TripState>((set, get) => ({
         trips: state.trips.filter((t) => t.id !== id),
         currentTrip: state.currentTrip?.id === id ? null : state.currentTrip,
       }))
-      toast.success("行程已删除")
+      toast.success(t("toast.tripDeleted"))
     } catch (error) {
-      const message = error instanceof Error ? error.message : "删除行程失败"
+      const message = error instanceof Error ? error.message : t("toast.deleteFailed")
       toast.error(message)
     }
   },

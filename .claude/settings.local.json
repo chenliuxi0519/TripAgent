@@ -16,7 +16,9 @@
       "Bash(rm -vf test_extract.mjs test_full_flow.mjs test_validation.mjs)",
       "Bash(rm -vrf docs)",
       "Bash(rm -vrf coverage dist backend/__pycache__)",
-      "Bash(echo \"--- tsc -b exit: $? ---\")"
+      "Bash(echo \"--- tsc -b exit: $? ---\")",
+      "Bash(grep -rn \"language\\).toBe\\\\|language: \\\\\"zh\\\\\"\\\\|toBe\\(\\\\\"zh\\\\\"\\)\\\\|toBe\\('zh'\\)\" src/stores/__tests__)",
+      "Bash(grep -rn \"toast\\\\.\\\\\\(success\\\\|error\\\\\\)\" src/stores/tripStore.ts)"
     ]
   }
 }
