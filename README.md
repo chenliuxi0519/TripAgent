@@ -18,7 +18,7 @@ It's made of two parts:
                   (map, export)             (tools, memory)      web search / Wikipedia
 ```
 
-## What it does (and where to find it)
+## What it does
 
 - **Uses several tools and decides which to call** — 7 tools in `backend/tools/`, driven by
   a tool-calling loop in `backend/agents/travel_agent.py`. They are: weather (Open-Meteo),
@@ -77,21 +77,6 @@ hotels are simulated (no free real API exists for them).
 ```bash
 npm run test:run
 ```
-
-## Put it online (Render)
-
-Both parts can run on [Render](https://render.com) using the included
-[`render.yaml`](render.yaml):
-
-1. Push the project to GitHub.
-2. On Render: **New → Blueprint → pick your repo.** It creates the backend (Docker) and
-   the frontend (static site) for you.
-3. On the backend service, set `LLM_API_KEY`.
-4. On the frontend service, set `VITE_BACKEND_URL` to the backend's URL + `/api`
-   (e.g. `https://Trip Agent-backend.onrender.com/api`) and redeploy.
-
-> The free plan is fine for a demo, but saved data resets when the service restarts. For
-> permanent storage, attach a paid disk (see the comments in `render.yaml`).
 
 ## Folder layout
 
