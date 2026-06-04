@@ -4,7 +4,7 @@
 services:
   # ── Backend: FastAPI agent (Docker) ──────────────────────────────────────────
   - type: web
-    name: Trip Agent-backend
+    name: trip-agent-backend
     runtime: docker
     rootDir: backend
     dockerfilePath: ./Dockerfile
@@ -25,20 +25,20 @@ services:
     # Persistent storage requires a paid plan. Uncomment with plan: starter to
     # keep accounts/trips/FAISS memory across deploys:
     # disk:
-    #   name: Trip Agent-data
+    #   name: trip-agent-data
     #   mountPath: /var/data
     #   sizeGB: 1
 
   # ── Frontend: React static site ──────────────────────────────────────────────
   - type: web
-    name: Trip Agent-frontend
+    name: trip-agent-frontend
     runtime: static
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     envVars:
       # After the backend is live, set this to its URL + /api and redeploy.
       - key: VITE_BACKEND_URL
-        value: https://Trip Agent-backend.onrender.com/api
+        value: https://trip-agent-backend.onrender.com/api
     routes:
       - type: rewrite           # SPA fallback so client-side routes work
         source: /*
