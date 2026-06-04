@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build)",
+      "Bash(npx tsc --help:*)",
+      "Bash(pnpm test:run)",
+      "Bash(npx tsc:*)",
+      "Bash(npx vitest *)",
+      "Bash(npx eslint *)",
+      "Bash(python -m py_compile routers/trips_db.py)",
+      "Bash(npx vite *)",
+      "Bash(python -m py_compile routers/preferences.py models/db_models.py main.py)",
+      "Bash(cat test_extract.mjs test_full_flow.mjs test_validation.mjs)",
+      "Bash(ls backend/*.txt backend/*.md backend/Dockerfile backend/render.yaml backend/.env*)",
+      "Bash(rm -vf README_new.md GLM_INTEGRATION_GUIDE.md LLM_INTEGRATION_GUIDE.md LLM_IMPLEMENTATION_SUMMARY.md IMPLEMENTATION_SUMMARY.md SESSION_MANAGEMENT.md INSTALL_CN.md SETUP_CN.md)",
+      "Bash(rm -vf test_extract.mjs test_full_flow.mjs test_validation.mjs)",
+      "Bash(rm -vrf docs)",
+      "Bash(rm -vrf coverage dist backend/__pycache__)",
+      "Bash(echo \"--- tsc -b exit: $? ---\")"
+    ]
+  }
+}

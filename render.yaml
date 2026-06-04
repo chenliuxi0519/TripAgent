@@ -1,0 +1,45 @@
+# Render blueprint: deploys the FastAPI backend + the React static frontend.
+# Render → New → Blueprint → pick this repo. Then set LLM_API_KEY on the backend
+# and point the frontend's VITE_BACKEND_URL at the backend URL + /api.
+services:
+  # ── Backend: FastAPI agent (Docker) ──────────────────────────────────────────
+  - type: web
+    name: travelmind-backend
+    runtime: docker
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    # `free` works for a demo, but data (SQLite + FAISS) is then EPHEMERAL and
+    # resets on redeploy/spin-down, and the service cold-starts after idle.
+    # For durable data, switch to `starter` (paid) and uncomment the `disk` block.
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: LLM_API_KEY        # set in the dashboard (kept out of git)
+        sync: false
+      - key: LLM_BASE_URL
+        value: https://open.bigmodel.cn/api/paas/v4/
+      - key: LLM_MODEL
+        value: glm-4-flash
+      - key: DATA_DIR
+        value: /var/data
+    # Persistent storage requires a paid plan. Uncomment with plan: starter to
+    # keep accounts/trips/FAISS memory across deploys:
+    # disk:
+    #   name: travelmind-data
+    #   mountPath: /var/data
+    #   sizeGB: 1
+
+  # ── Frontend: React static site ──────────────────────────────────────────────
+  - type: web
+    name: travelmind-frontend
+    runtime: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      # After the backend is live, set this to its URL + /api and redeploy.
+      - key: VITE_BACKEND_URL
+        value: https://travelmind-backend.onrender.com/api
+    routes:
+      - type: rewrite           # SPA fallback so client-side routes work
+        source: /*
+        destination: /index.html

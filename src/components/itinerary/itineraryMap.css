@@ -1,0 +1,16 @@
+/*
+ * Itinerary map layering fix.
+ *
+ * Leaflet assigns high z-indexes to its internal panes (up to 700 for popups)
+ * and controls (800-1000). By default `.leaflet-container` does not create its
+ * own stacking context, so those high values leak up to the root and render the
+ * map ABOVE application popups/dialogs (which sit at z-50). Isolating the map
+ * into its own stacking context anchored at z-index 0 keeps all of Leaflet's
+ * internal layering intact while guaranteeing the whole map sits BELOW any app
+ * popup/dialog/dropdown.
+ */
+.leaflet-container {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
