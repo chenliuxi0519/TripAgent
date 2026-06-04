@@ -80,7 +80,7 @@ class Settings:
     # return HTTP 429. Override via env in production with your own contact.
     USER_AGENT: str = os.getenv(
         "USER_AGENT",
-        "TravelMindAgent/2.0 (travel-planning-agent; contact: travelmind.app@gmail.com)",
+        "Trip AgentAgent/2.0 (travel-planning-agent; contact: Trip Agent.app@gmail.com)",
     )
 
     @property

@@ -14,7 +14,7 @@ import httpx
 
 from config import settings
 
-logger = logging.getLogger("travelmind.http")
+logger = logging.getLogger("Trip Agent.http")
 
 _client: Optional[httpx.AsyncClient] = None
 

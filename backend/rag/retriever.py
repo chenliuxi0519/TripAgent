@@ -33,7 +33,7 @@ from services.geocode import geocode_city
 from services.http_client import request_json
 from services.places import search_attractions
 
-logger = logging.getLogger("travelmind.rag")
+logger = logging.getLogger("Trip Agent.rag")
 
 _MAX_CACHED_CITIES = 12
 _cache: "OrderedDict[str, CityKnowledge]" = OrderedDict()

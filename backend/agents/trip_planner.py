@@ -39,7 +39,7 @@ from services.geocode import geocode_city
 from services.places import search_attractions
 from services.weather import get_weather
 
-logger = logging.getLogger("travelmind.trip_planner")
+logger = logging.getLogger("Trip Agent.trip_planner")
 
 _ACTIVITY_TYPES = {"transportation", "attraction", "dining", "accommodation",
                    "shopping", "other"}

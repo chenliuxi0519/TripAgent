@@ -17,7 +17,7 @@ from openai import AsyncOpenAI
 
 from config import settings
 
-logger = logging.getLogger("travelmind.llm")
+logger = logging.getLogger("Trip Agent.llm")
 
 _client: Optional[AsyncOpenAI] = None
 

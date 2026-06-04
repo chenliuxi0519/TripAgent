@@ -1,4 +1,4 @@
-# TravelMind — Technical Document
+# Trip Agent — Technical Document
 
 Brief design notes covering architecture, tool selection, and memory design.
 

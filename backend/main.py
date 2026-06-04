@@ -55,7 +55,7 @@ app.include_router(memory.router, prefix="/api", tags=["memory"])
 
 @app.get("/")
 async def root():
-    return {"service": "TravelMind", "docs": "/docs", "health": "/api/health"}
+    return {"service": "Trip Agent", "docs": "/docs", "health": "/api/health"}
 
 
 if __name__ == "__main__":

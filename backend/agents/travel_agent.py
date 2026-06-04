@@ -26,7 +26,7 @@ from memory.memory_manager import (
 from planning.planner import make_plan, plan_to_prompt
 from tools.travel_tools import TOOL_SCHEMAS, execute_tool
 
-logger = logging.getLogger("travelmind.agent")
+logger = logging.getLogger("Trip Agent.agent")
 
 
 def _convert_tools(anthropic_tools: list) -> list:
@@ -72,7 +72,7 @@ SYSTEM_PROMPTS = {
 {long_term_prefs}
 {plan}
 """,
-    "en": """You are an enthusiastic, professional AI travel planner named "TravelMind". You help users plan personalized 2-day trips.
+    "en": """You are an enthusiastic, professional AI travel planner named "Trip Agent". You help users plan personalized 2-day trips.
 
 Your tools:
 1. get_weather — live weather & forecast (Open-Meteo, real)

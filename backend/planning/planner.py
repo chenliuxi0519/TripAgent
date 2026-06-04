@@ -23,7 +23,7 @@ from typing import Optional
 from config import settings
 from llm import chat_with_retry
 
-logger = logging.getLogger("travelmind.planner")
+logger = logging.getLogger("Trip Agent.planner")
 
 
 # ── Lightweight intent / slot detection (no LLM) ──────────────────────────────

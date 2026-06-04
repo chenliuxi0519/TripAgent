@@ -1,6 +1,6 @@
-# TravelMind — AI Travel Planning Agent
+# Trip Agent — AI Travel Planning Agent
 
-TravelMind helps you plan a trip to any city just by chatting. You tell it where you
+Trip Agent helps you plan a trip to any city just by chatting. You tell it where you
 want to go (and anything you care about — budget, food, pets…), and it builds a
 day-by-day itinerary. Behind the scenes it acts like a real travel agent: it checks the
 **weather**, looks up **real attractions**, **searches the web**, **remembers what you
@@ -88,7 +88,7 @@ Both parts can run on [Render](https://render.com) using the included
    the frontend (static site) for you.
 3. On the backend service, set `LLM_API_KEY`.
 4. On the frontend service, set `VITE_BACKEND_URL` to the backend's URL + `/api`
-   (e.g. `https://travelmind-backend.onrender.com/api`) and redeploy.
+   (e.g. `https://Trip Agent-backend.onrender.com/api`) and redeploy.
 
 > The free plan is fine for a demo, but saved data resets when the service restarts. For
 > permanent storage, attach a paid disk (see the comments in `render.yaml`).

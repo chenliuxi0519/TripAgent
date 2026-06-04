@@ -24,7 +24,7 @@ import numpy as np
 from config import settings
 from embeddings import embed_text, embed_texts
 
-logger = logging.getLogger("travelmind.memory")
+logger = logging.getLogger("Trip Agent.memory")
 
 # ── Short-term memory ──────────────────────────────────────────────────────────
 

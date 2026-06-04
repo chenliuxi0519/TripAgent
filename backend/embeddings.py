@@ -19,7 +19,7 @@ from openai import AsyncOpenAI
 
 from config import settings
 
-logger = logging.getLogger("travelmind.embeddings")
+logger = logging.getLogger("Trip Agent.embeddings")
 
 _client: Optional[AsyncOpenAI] = None
 
