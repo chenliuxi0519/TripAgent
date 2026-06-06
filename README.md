@@ -95,10 +95,7 @@ render.yaml     one-click deploy config for Render
 
 ## Screenshots
 
-![Itinerary1](./assets/1.png)
-
-![Itinerary2](./assets/2.png)
-
-![Itinerary3](./assets/3.png)
-
-![Itinerary4](./assets/4.png)
+![Itinerary1](./src/assets/1.png)
+![Itinerary2](./src/assets/2.png)
+![Itinerary3](./src/assets/3.png)
+![Itinerary4](./src/assets/4.png)
