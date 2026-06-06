@@ -92,3 +92,13 @@ backend/        FastAPI agent
 src/            React web app (chat, itinerary cards, map, export)
 render.yaml     one-click deploy config for Render
 ```
+
+## Screenshots
+
+![Itinerary1](./assets/1.png)
+
+![Itinerary2](./assets/2.png)
+
+![Itinerary3](./assets/3.png)
+
+![Itinerary4](./assets/4.png)
